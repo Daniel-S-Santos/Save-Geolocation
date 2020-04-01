@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-mongoose.connect("mongodb://localhost/Amey",{ useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect("geonosis.mongodb.umbler.com:46115",{ useNewUrlParser: true, useUnifiedTopology: true })
 
 var db = mongoose.connection
 
