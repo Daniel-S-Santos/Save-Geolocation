@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const mongodb = require('mongodb')
-const GeoSchema = mongodb.Schema({
+const GeoSchema = new mongodb.Schema({
     latitude: {type: String},
     longitude: {type: String},
     location: {type: String},
