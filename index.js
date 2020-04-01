@@ -8,7 +8,7 @@ require('./src/mongo')
 const Geo = require('./controller/GeoController')
 app.use(bodyParser.urlencoded({extended: true}))
 
-
+const port = process.env.PORT || 3009
 app.get('/api', (req, res) => {    
     res.sendFile(__dirname + "/index.html")
 })
@@ -105,7 +105,7 @@ app.get('/um/:_id', (req, res)=>{
 
 
 
-app.listen(3009, function(){
-    console.log('app rodando na porta 3000')
+app.listen(port, function(){
+    console.log('app rodando na porta'+port)
 })
 
