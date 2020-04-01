@@ -60,24 +60,6 @@ geocode("Porto velho",(error, { latitude, longitude, location } = {})=>{
 
 
 
-
-const validarNome =(nome, callback)=>{
-    if(nome !="daniel"){
-        callback("Nome invalido",undefined)
-    } else {
-        callback(undefined,{
-            "name": nome,
-            "valido": true,
-            "cod":154
-        })
-    }
-}
-validarNome("daniel",(error,data)=>{
-    if(error){
-        return console.log(error)
-    }
-     console.log(data)
-})
 })
 
 app.get('/locations', (req, res)=>{
