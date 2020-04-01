@@ -2,7 +2,7 @@ const Geo = require('../model/GeoSchema')
 
 
 exports.InserirGeo = function(req, res,geolocation) {
-
+console.log('entrou Inserir')
     Geo.create(geolocation).then(r =>{        
         if(r){
             res.send('Inserted')

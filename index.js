@@ -46,7 +46,7 @@ app.post('/res', (req, res) => {
 geocode("Porto velho",(error, { latitude, longitude, location } = {})=>{
     
     if(error){        
-        // console.log(error)
+         console.log("entrou error")
         return console.log(error)
     }
     const data = {latitude:latitude,
