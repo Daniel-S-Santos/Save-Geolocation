@@ -22,6 +22,9 @@ app.post('/res', (req, res) => {
 //   const ress = await qrcode.toDataURL(`${parse}`);
 //   await fs.writeFileSync('./qr.html', `<img src="${ress}">`);
 //   console.log('Wrote to ./qr.html');
+// console.log(req.query)
+//console.log(req.params)
+
 
   const geocode = (address, callback) => {    
     const encoded = address
@@ -42,8 +45,8 @@ app.post('/res', (req, res) => {
     })
 }
 
-
-geocode("Porto velho",(error, { latitude, longitude, location } = {})=>{
+// const address = req.body.content
+geocode(req.body.content,(error, { latitude, longitude, location } = {})=>{
     
     if(error){        
          console.log("entrou error")
