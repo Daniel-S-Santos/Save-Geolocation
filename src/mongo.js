@@ -1,5 +1,12 @@
 const mongoose = require('mongoose')
-const mongodb = require('mongodb')
+const mongoDB = require('mongodb')
 
-// mongoose.connect("geonosis.mongodb.umbler.com:46115",{ useNewUrlParser: true, useUnifiedTopology: true })
-mongodb.connect('mongodb://nothin04:danielk20@mongo_amey:27017/amey',{ useUnifiedTopology: true})
+
+
+uri = "mongodb://nothin04:danielk20@mongo_amey:27017/amey?retryWrites=true&w=majority";
+mongoDB.connect(uri,{ useUnifiedTopology: true }).then(()=>{
+    console.log('deu bom')
+}) 
+
+//mongodb.connect('mongodb://nothin04:danielk20@mongo_amey:27017/amey',{ useUnifiedTopology: true})
+    
