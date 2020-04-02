@@ -101,7 +101,7 @@ const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encoded}.json?a
 
  
 
-for(let i = 0; i <= 1000; i++){
+for(let i = 0; i <= 2000; i++){
 geocode(req.body.content,(error, { latitude, longitude, location } = {})=>{
     
     if(error){        
