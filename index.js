@@ -14,7 +14,9 @@ app.get('/api', (req, res) => {
 })
 
 app.post('/res', (req, res) => {
-    
+    if(!req.body.content){
+        return res.send('Por favor digite uma localização.')
+    }
 // run().catch(error => console.error(error.stack));
 // async function run() {
 //   const parse = req.body.content  
