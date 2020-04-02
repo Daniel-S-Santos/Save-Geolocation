@@ -45,9 +45,13 @@ exports.DeletarTudo = function(req, res){
 exports.DeletarUm = function(req, res){
     let objeto = req.params._id
     Geo.findOneAndDelete({"_id":objeto}).then(r =>{
+        if(!r){
+            res.send('Localização nao encontrada')
+        }else{
         console.log("Deletado com sucesso")
         const lol = JSON.stringify(r)
         res.send(lol)     
+        }
     }).catch(error => { res.send(error)})
 }
 
