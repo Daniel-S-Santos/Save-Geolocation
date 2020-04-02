@@ -15,7 +15,7 @@ exports.InserirGeo = function(req, res,geolocation) {
 
 exports.BuscarGeos = function(req, res){    
         Geo.find().then(r =>{
-            //console.log(r)
+            
             if(r){
                 res.send(r)
             }
@@ -48,7 +48,7 @@ exports.DeletarUm = function(req, res){
     Geo.findOneAndDelete({"_id":objeto}).then(r =>{
         console.log("Deletado com sucesso")
         const lol = JSON.stringify(r)
-        res.send("Deletado com sucesso"+lol)     
+        res.send(lol)     
     }).catch(error => { res.send(error)})
 }
 
