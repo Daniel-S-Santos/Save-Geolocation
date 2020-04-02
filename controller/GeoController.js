@@ -26,10 +26,11 @@ exports.BuscarUm = function(req, res){
     let objeto = req.params._id
     
     Geo.findById({"_id" : objeto}).then(r =>{        
-        if(r){            
-            res.send(r)
-        }else {
+        if(!r){           
             res.send({"404":'Não encontrado'})
+        }else {
+            const lol = JSON.stringify(r)
+            res.send(lol)
         }
     }).catch(error =>{res.send(error)})
 }
