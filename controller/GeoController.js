@@ -47,7 +47,7 @@ exports.DeletarUm = function(req, res){
     let objeto = req.params._id
     Geo.findOneAndDelete({"_id":objeto}).then(r =>{
         console.log("Deletado com sucesso")
-        const lol = JSON.parse(r)
+        const lol = JSON.stringify(r)
         res.send("Deletado com sucesso"+lol)     
     }).catch(error => { res.send(error)})
 }
