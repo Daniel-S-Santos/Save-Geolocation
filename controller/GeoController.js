@@ -1,11 +1,17 @@
 const Geo = require('../model/GeoSchema')
-
+const previsao = require('../src/previsao')
 var erros = []
  exports.InserirGeo = async function(req, res,geolocation) {
 //console.log('entrou Inserir', geolocation)
     Geo.create(geolocation).then(r=>{
         if(r){
-            res.sendStatus(200)
+            previsao(geolocation.latitude,geolocation.longitude,geolocation.location,(error,data)=>{
+                if(error){
+                    res.send("error")
+                }else{                    
+                    res.send(data)
+                }
+            })
         }        
     }).catch(error=>{
         erros.push(error)
