@@ -76,13 +76,15 @@ app.get('/um/:_id', (req, res)=>{
         console.log(callback2)
     })
 })
-
+app.get('/deletall', (req, res)=>{
+    Geo.DeletarTudo(req, res)
+})
 
 
 
 
 
 app.listen(port, function(){
-    console.log('app rodando na porta'+port)
+    console.log('app rodando na porta '+port)
 })
 

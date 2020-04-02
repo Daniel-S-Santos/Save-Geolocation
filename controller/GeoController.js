@@ -35,6 +35,15 @@ exports.BuscarUm = function(req, res){
     }).catch(error =>{res.send(error)})
 }
 
+exports.DeletarTudo = function(req, res){
+    Geo.deleteMany().then((r)=>{
+        console.log('deletados')
+        res.send('Todas as locations foram deletadas')
+    }).catch(error => {
+        console.log(error)
+    })
+}
+
 
 
 
