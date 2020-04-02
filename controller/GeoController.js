@@ -1,16 +1,15 @@
 const Geo = require('../model/GeoSchema')
 
-
-exports.InserirGeo = function(req, res,geolocation) {
+var erros = []
+ exports.InserirGeo = async function(req, res,geolocation) {
 //console.log('entrou Inserir', geolocation)
-    Geo.create(geolocation).then(r =>{        
+    Geo.create(geolocation).then(r=>{
         if(r){
-            res.send('Inserted')
-            console.log('Inseriu')            
-        }else {
-            throw new Error('Deu ruim')
-        }
-    }).catch(error =>{console.log(error)})
+            res.sendStatus(200)
+        }        
+    }).catch(error=>{
+        erros.push(error)
+    })
 }
 
 exports.BuscarGeos = function(req, res){    
