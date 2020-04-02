@@ -73,7 +73,7 @@ app.get('/deletarum/:_id', (req, res)=>{
 
 app.post('/api/inserir/', (req, res)=>{
      
-    if(!req.body.address){
+    if(!req.body.content){
         return res.send('Por favor digite uma localização.')
     }
 
@@ -102,7 +102,7 @@ const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encoded}.json?a
  
 
 for(let i = 0; i <= 10000; i++){
-geocode(req.body.address,(error, { latitude, longitude, location } = {})=>{
+geocode(req.body.content,(error, { latitude, longitude, location } = {})=>{
     
     if(error){        
          console.log("entrou error")
