@@ -43,6 +43,14 @@ exports.DeletarTudo = function(req, res){
         console.log(error)
     })
 }
+exports.DeletarUm = function(req, res){
+    let objeto = req.params._id
+    Geo.findOneAndDelete({"_id":objeto}).then(r =>{
+        console.log("Deletado com sucesso")
+
+        res.send("Deletado com sucesso"+r)     
+    }).catch(error => { res.send(error)})
+}
 
 
 

@@ -79,6 +79,9 @@ app.get('/um/:_id', (req, res)=>{
 app.get('/deletall', (req, res)=>{
     Geo.DeletarTudo(req, res)
 })
+app.get('/deletarum/:_id', (req, res)=>{
+    Geo.DeletarUm(req, res)
+})
 
 
 
