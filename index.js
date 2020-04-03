@@ -20,24 +20,22 @@ app.post('/res', (req, res) => {
         return res.send('Por favor digite uma localização.')
     }
 
-
-
-
-
 // const address = req.body.content
-geocode(req.body.content,(error, { latitude, longitude, location } = {})=>{
-    if(error){        
-         console.log("error geocode")
-        return console.log(error)
-    }
-    const data = {latitude:latitude,
-    longitude:longitude,
-    location:location
-    }    
-    Geo.InserirGeo(req,res,data)
-    
+    geocode(req.body.content,(error, { latitude, longitude, location, resumo } = {})=>{
+        if(error){        
+            console.log("error geocode")
+            return console.log(error)
+        }
+        const data = {latitude:latitude,
+        longitude:longitude,
+        location:location,
+        resumo:resumo
+        }    
+        Geo.InserirGeo(req,res,data)
+        
+    })
 })
-})
+
 app.post('/previsao', (req, res)=>{
     
     geocode(req.body.local,(error,{ latitude, longitude, location}={})=>{

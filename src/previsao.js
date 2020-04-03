@@ -10,7 +10,8 @@ const previsao = (latitude,longitude,location,callback)=>{
             callback(undefined,{
                 "Temperatura": body.currently.temperature,
                 "precipitacao": prob,
-                "local":location
+                "local":location,
+                "resumo": body.daily.summary
             })
         }
     })
