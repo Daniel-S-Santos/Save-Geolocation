@@ -56,6 +56,7 @@ app.post('/previsao', (req, res)=>{
     })
 })
 
+
 app.get('/locations', (req, res)=>{
     Geo.BuscarGeos(req, res)
 })
