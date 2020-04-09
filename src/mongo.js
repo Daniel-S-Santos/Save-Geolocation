@@ -8,7 +8,7 @@ uri = "mongodb://nothin04:danielk20@mongo_amey:27017/amey?retryWrites=true&w=maj
 // mongoDB.connect(uri,{ useUnifiedTopology: true }).then(()=>{
 //     console.log('deu bom')
 // }) 
-mongoose.connect(uri,{ useUnifiedTopology: true, useNewUrlParser: true })
+mongoose.connect(uri,{ useUnifiedTopology: true, useNewUrlParser: true , reconnectTries:9999, reconnectInterval:1000})
 const db = mongoose.connection
 db.once('connected',()=>{
     console.log('Connectado')
