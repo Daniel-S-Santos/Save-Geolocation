@@ -8,10 +8,11 @@ const previsao = (latitude,longitude,location,callback)=>{
         }else {
             const prob = body.currently.precipProbability
             callback(undefined,{
-                "Temperatura": body.currently.temperature,
-                "precipitacao": prob,
                 "local":location,
-                "resumo": body.daily.summary
+                "resumo": body.daily.summary,
+                "Temperatura": body.currently.temperature,
+                "precipitacao": prob,               
+                "pressao": body.currently.pressure
             })
         }
     })
